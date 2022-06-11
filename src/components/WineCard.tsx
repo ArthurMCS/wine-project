@@ -2,7 +2,8 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 import { Wine } from '../interfaces/wineInterface';
 import WineCardStyledComponent from '../styles/WineCard';
 
@@ -12,6 +13,16 @@ type Props = {
 
 export default function WineCard(props: Props) {
   const { wine } = props;
+  const { cart, setCart } = useContext(AppContext);
+
+  const handleClick = () => {
+    setCart([...cart, wine]);
+    if (cart.length > 0) {
+      localStorage.setItem('cart', JSON.stringify([...cart, wine]));
+    } else {
+      localStorage.setItem('cart', JSON.stringify([...cart, wine]));
+    }
+  };
 
   return (
     <WineCardStyledComponent>
@@ -33,6 +44,7 @@ export default function WineCard(props: Props) {
       </div>
       <button
         type="button"
+        onClick={handleClick}
       >
         ADICIONAR
       </button>

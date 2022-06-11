@@ -13,7 +13,8 @@ import WineSectionStyledComponent from '../styles/WineSection';
 import AppContext from '../context/AppContext';
 
 const Home = () => {
-  const wines = useContext(AppContext);
+  const { wines } = useContext(AppContext);
+
   return (
     <div>
       <Head>
@@ -22,6 +23,7 @@ const Home = () => {
 
       <main>
         <NavBar />
+        <span>{`${wines.length} produtos encontrados`}</span>
         <WineSectionStyledComponent>
           {wines.map((w: Wine) => <WineCard wine={w} key={w.id} />)}
         </WineSectionStyledComponent>
