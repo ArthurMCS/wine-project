@@ -23,6 +23,10 @@ const NavBarStyledComponent = styled.nav`
             border: 1px solid black;
             border-radius: 100%;
             background-color: #fff;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         svg {
@@ -32,7 +36,9 @@ const NavBarStyledComponent = styled.nav`
             top: 3.16px;
             border-radius: 0px;
         }
+
     }
+
 
     /* From uiverse.io by @alexruix */
     /* From uiverse.io by @alexruix */

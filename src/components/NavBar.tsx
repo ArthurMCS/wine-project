@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import { IoMdSearch } from 'react-icons/io';
-import NavBarStyledComponent from '../src/styles/NavBar';
+import NavBarStyledComponent from '../styles/NavBar';
 
 export default function NavBar() {
   const [displaySearchBar, setDisplaySetBar] = useState(false);

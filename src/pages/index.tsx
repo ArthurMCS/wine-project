@@ -8,8 +8,10 @@ import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
-import NavBar from '../../components/NavBar';
+import NavBar from '../components/NavBar';
 import { Wine } from '../interfaces/wineInterface';
+import WineCard from '../components/WineCard';
+import WineSectionStyledComponent from '../styles/WineSection';
 
 export type DataType = {
  data: {
@@ -27,11 +29,9 @@ const Home = ({ data }: DataType) => {
 
       <main>
         <NavBar />
-        <div>
-          {wines.map((w) => (
-            <p>{w.name}</p>
-          ))}
-        </div>
+        <WineSectionStyledComponent>
+          {wines.map((w) => <WineCard wine={w} key={w.id} />)}
+        </WineSectionStyledComponent>
       </main>
 
       <footer />

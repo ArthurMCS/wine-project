@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
 export default async function handler(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse,
 ) {
   const result = await axios.get('https://wine-back-test.herokuapp.com/products?page=1&limit=10');
