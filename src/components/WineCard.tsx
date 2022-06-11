@@ -12,6 +12,7 @@ type Props = {
 
 export default function WineCard(props: Props) {
   const { wine } = props;
+
   return (
     <WineCardStyledComponent>
       <div>

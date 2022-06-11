@@ -6,12 +6,13 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import GlobalStyle from '../styles/global';
+import AppProvider from '../context/AppProvider';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
-  <>
+  <AppProvider>
     <Component {...pageProps} />
     <GlobalStyle />
-  </>
+  </AppProvider>
 );
 
 export default MyApp;
