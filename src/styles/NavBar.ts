@@ -6,37 +6,92 @@ const NavBarStyledComponent = styled.nav`
     justify-content: space-around;
     width: 100%;
     height: 88.23px;
+    background: #FFFFFF;
 
-    div {
-        display: inherit;
+    button {
+        border: none;
+    }
+
+    .UserMenu-toggler {
+        color: #fff;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .UserMenu-togglerPhoto {
+        position: relative;
+        margin: 16px 20px;
+        width: 56px;
+        height: 56px;
+        overflow: hidden;
+    }
+
+    .UserMenu-togglerPhoto img{
+        position: relative;
+        margin: 0;
+        display: block;
+        left: -56px;
+        width: 168px;
+        height: 112px;
+    }
+
+    .MainMenu-search-icon {
+        background-image: url(https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg);
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: content-box;
+        background-clip: initial;
+        background-color: initial;
+        background-origin: content-box;
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        height: 56px;
+        margin: 16px 20px;
+        outline: 0;
+        width: 56px;
+    }
+
+    .active {
+        background-position-y: 56px;
+    }
+
+    .WineboxButton {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+    }
+
+    .WineboxButton-image-wrap { 
+        height: 56px;
+        overflow: hidden;
+        width: 56px;
+    }
+
+    .WineboxButton-image {
+        left: -112px;
+        position: relative;
+    }
+
+    .WineboxButton-quantity {
         align-items: center;
-        justify-content: space-between;
-        width: 200px;
-
-        button {
-            position: absolute;
-            display: inherit;
-            align-items: center;
-            justify-content: center;
-            height: 56px;
-            width: 56px;
-            border: 1px solid black;
-            border-radius: 100%;
-            background-color: #fff;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
-        svg {
-            height: 41.66px;
-            width: 41.66px;
-            left: 3.16px;
-            top: 3.16px;
-            border-radius: 0px;
-        }
-
+        background-color: #f5f5f5;
+        border-radius: 50%;
+        bottom: -1px;
+        color: #5cb79f;
+        display: flex;
+        font-size: 11px;
+        height: 20px;
+        justify-content: center;
+        letter-spacing: normal;
+        line-height: normal;
+        position: absolute;
+        right: -1px;
+        width: 20px;
     }
 
 
@@ -58,7 +113,7 @@ const NavBarStyledComponent = styled.nav`
         outline: none;
         padding: .2rem 1rem;
         border-radius: 1rem;
-        border-color: #7a9cc6;
+        border-color: #c81a78;
     }
 
     .input::placeholder {
