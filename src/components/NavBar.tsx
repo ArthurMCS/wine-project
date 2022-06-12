@@ -10,8 +10,6 @@ export default function NavBar() {
   const [displaySearchBar, setDisplaySetBar] = useState(false);
   const { search, setSearch, cart } = useContext(AppContext);
 
-  console.log(search);
-
   const handleClick = (e: any) => {
     e.classList.toggle('active');
     setDisplaySetBar(!displaySearchBar);
@@ -21,7 +19,7 @@ export default function NavBar() {
     <NavBarStyledComponent>
       <img alt="Wine" className="Logo-image" src="https://img.wine.com.br/logo/wine/black/wine.svg" />
 
-      <div>
+      <div className="Searcher-Wrap">
         {
         displaySearchBar && (
         <input
@@ -35,26 +33,28 @@ export default function NavBar() {
       }
       </div>
 
-      <button
-        className="MainMenu-search-icon"
-        type="button"
-        onClick={(e) => handleClick(e.target)}
-      />
+      <div className="Icons-wrap">
+        <button
+          className="MainMenu-search-icon"
+          type="button"
+          onClick={(e) => handleClick(e.target)}
+        />
 
-      <div className="UserMenu-toggler">
-        <div className="UserMenu-togglerPhoto">
-          <img src="https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg" alt="Minha Conta" />
+        <div className="UserMenu-toggler">
+          <div className="UserMenu-togglerPhoto">
+            <img src="https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg" alt="Minha Conta" />
+          </div>
         </div>
-      </div>
 
-      <div className="WineboxButton">
-        <div className="WineboxButton-image-wrap">
-          <img
-            alt="Winebox"
-            src="https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg"
-            className="WineboxButton-image"
-          />
-          <span className="WineboxButton-quantity">{cart.length}</span>
+        <div className="WineboxButton">
+          <div className="WineboxButton-image-wrap">
+            <img
+              alt="Winebox"
+              src="https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg"
+              className="WineboxButton-image"
+            />
+            <span className="WineboxButton-quantity">{cart.length}</span>
+          </div>
         </div>
       </div>
 

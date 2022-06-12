@@ -12,6 +12,16 @@ const NavBarStyledComponent = styled.nav`
         border: none;
     }
 
+    .Icons-wrap {
+        display: inherit;
+        align-items: center;
+        margin-right: -100px;
+    }
+
+    .Logo-image [
+        position: absolute;
+    ]
+
     .UserMenu-toggler {
         color: #fff;
         font-size: 10px;
@@ -51,7 +61,7 @@ const NavBarStyledComponent = styled.nav`
         display: inline-block;
         float: right;
         height: 56px;
-        margin: 16px 20px;
+        margin: 16px 0px;
         outline: 0;
         width: 56px;
     }
@@ -94,6 +104,13 @@ const NavBarStyledComponent = styled.nav`
         width: 20px;
     }
 
+    .Searcher-Wrap {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 
     /* From uiverse.io by @alexruix */
     /* From uiverse.io by @alexruix */
@@ -106,7 +123,6 @@ const NavBarStyledComponent = styled.nav`
         background-color: transparent;
         color: #0d0c22;
         transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        margin-left: -120%;
     }
 
     .input:focus, input:hover {
