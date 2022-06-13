@@ -17,6 +17,7 @@ export default function WineCard(props: Props) {
 
   const handleClick = () => {
     const exist = cart.find((item: Wine) => item.id === Number(wine.id));
+
     if (exist) {
       exist.quantity += 1;
     } else {
@@ -25,6 +26,7 @@ export default function WineCard(props: Props) {
         quantity: 1,
       });
     }
+
     setCart([...cart]);
     localStorage.setItem('cart', JSON.stringify(cart));
   };

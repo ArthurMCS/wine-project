@@ -13,9 +13,15 @@ type Props = {
 
 export default function SideCard(props: Props) {
   const { cartItem } = props;
+
   const {
-    quantity, image, name, id, priceMember,
+    quantity,
+    image,
+    name,
+    id,
+    priceMember,
   } = cartItem;
+
   const { cart, setCart } = useContext(AppContext);
 
   const hanldeClicks = () => {
