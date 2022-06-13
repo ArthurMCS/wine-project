@@ -7,6 +7,8 @@ const NavBarStyledComponent = styled.nav`
     width: 100%;
     height: 88.23px;
     background: #FFFFFF;
+    position: sticky;
+    top: 0;
 
     button {
         border: none;

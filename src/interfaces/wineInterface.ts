@@ -9,4 +9,5 @@ export interface Wine {
     type: string;
     classification: string;
     size: number;
+    quantity: number;
 }

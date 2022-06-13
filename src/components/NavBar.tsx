@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
@@ -8,7 +10,10 @@ import NavBarStyledComponent from '../styles/NavBar';
 
 export default function NavBar() {
   const [displaySearchBar, setDisplaySetBar] = useState(false);
-  const { search, setSearch, cart } = useContext(AppContext);
+
+  const {
+    search, setSearch, bottles, setDisplayBarCart,
+  } = useContext(AppContext);
 
   const handleClick = (e: any) => {
     e.classList.toggle('active');
@@ -46,14 +51,18 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className="WineboxButton">
+        <div
+          className="WineboxButton"
+          role="button"
+          onClick={() => setDisplayBarCart(true)}
+        >
           <div className="WineboxButton-image-wrap">
             <img
               alt="Winebox"
               src="https://img.wine.com.br/fenix/image/_big_bang/icons/header-sprite.svg"
               className="WineboxButton-image"
             />
-            <span className="WineboxButton-quantity">{cart.length}</span>
+            <span className="WineboxButton-quantity">{bottles}</span>
           </div>
         </div>
       </div>

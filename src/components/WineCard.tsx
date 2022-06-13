@@ -16,12 +16,17 @@ export default function WineCard(props: Props) {
   const { cart, setCart } = useContext(AppContext);
 
   const handleClick = () => {
-    setCart([...cart, wine]);
-    if (cart.length > 0) {
-      localStorage.setItem('cart', JSON.stringify([...cart, wine]));
+    const exist = cart.find((item: Wine) => item.id === Number(wine.id));
+    if (exist) {
+      exist.quantity += 1;
     } else {
-      localStorage.setItem('cart', JSON.stringify([...cart, wine]));
+      cart.push({
+        ...wine,
+        quantity: 1,
+      });
     }
+    setCart([...cart]);
+    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   return (
