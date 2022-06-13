@@ -36,7 +36,6 @@ export default function AppProvider({ children }) {
   }, [search]);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
     if (cart.length > 0) {
       const numberBottles = cart
         .map((item) => item.quantity)

@@ -21,6 +21,7 @@ export default function SideCard(props: Props) {
   const hanldeClicks = () => {
     const updateCart = cart.filter((item: Wine) => item.id !== id);
     setCart(updateCart);
+    localStorage.setItem('cart', JSON.stringify(updateCart));
   };
 
   return (
