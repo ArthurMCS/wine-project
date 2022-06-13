@@ -25,12 +25,12 @@ export default function AppProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    if (search.length > 3) {
+    if (search.length > 2) {
       const winesFiltered = wines.filter((wine) => wine.name.toLowerCase().includes(search));
       setWines(winesFiltered);
     }
 
-    if (search.length < 3 && search.length > 0) {
+    if (search.length < 2) {
       fetchWines();
     }
   }, [search]);

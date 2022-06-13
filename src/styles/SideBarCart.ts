@@ -49,7 +49,7 @@ const SidebarCartStyledComponent = styled.aside`
 
     footer {
         display: inherit;
-        width: 350px;
+        width: 100%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
