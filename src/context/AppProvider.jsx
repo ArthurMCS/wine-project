@@ -11,9 +11,9 @@ export default function AppProvider({ children }) {
   const [bottles, setBottles] = useState(0);
 
   const fetchWines = async () => {
-    const res = await axios.get('http://localhost:3000/api/wines');
+    const res = await axios.get('https://wine-back-test.herokuapp.com/products?page=1&limit=50');
     const items = await res.data;
-    setWines(items.wines);
+    setWines(items.items);
   };
 
   useEffect(() => {
@@ -36,6 +36,7 @@ export default function AppProvider({ children }) {
   }, [search]);
 
   useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
     if (cart.length > 0) {
       const numberBottles = cart
         .map((item) => item.quantity)
