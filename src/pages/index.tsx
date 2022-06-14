@@ -12,9 +12,11 @@ import WineCard from '../components/WineCard';
 import WineSectionStyledComponent from '../styles/WineSection';
 import AppContext from '../context/AppContext';
 import SidebarCart from '../components/SidebarCart';
+import FiltersByPrice from '../components/FiltersByPrice';
 
 const Home = () => {
-  const { wines, displayBarCart } = useContext(AppContext);
+  const { wines, displayBarCart, winesByPrice } = useContext(AppContext);
+  const winesForRender = winesByPrice.length > 0 ? winesByPrice : wines;
 
   return (
     <div>
@@ -24,9 +26,10 @@ const Home = () => {
 
       <main>
         <NavBar />
-        <span>{`${wines.length} produtos encontrados`}</span>
+        <span>{`${winesForRender.length} produtos encontrados`}</span>
+        <FiltersByPrice />
         <WineSectionStyledComponent>
-          {wines.map((w: Wine) => <WineCard wine={w} key={w.id} />)}
+          {winesForRender.map((w: Wine) => <WineCard wine={w} key={w.id} />)}
         </WineSectionStyledComponent>
       </main>
       {

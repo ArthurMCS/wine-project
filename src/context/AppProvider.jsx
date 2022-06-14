@@ -9,6 +9,7 @@ export default function AppProvider({ children }) {
   const [search, setSearch] = useState('');
   const [displayBarCart, setDisplayBarCart] = useState(false);
   const [bottles, setBottles] = useState(0);
+  const [winesByPrice, setWinesByPrice] = useState([]);
 
   const fetchWines = async () => {
     const res = await axios.get('https://wine-back-test.herokuapp.com/products?page=1&limit=50');
@@ -56,6 +57,9 @@ export default function AppProvider({ children }) {
       displayBarCart,
       setDisplayBarCart,
       bottles,
+      setWines,
+      winesByPrice,
+      setWinesByPrice,
     }}
     >
       {children}
