@@ -8,10 +8,18 @@ export default createGlobalStyle`
 
         main {
             display: flex;
-            /* align-items: center; */
             justify-content: center;
             flex-direction: column;
-            background: #DEDEDE;;
+            background: #DEDEDE;
+            height: 100%;
+
+            .winesQuantity { 
+                text-align: center;
+                font-size: 22px;
+                margin-top: 30px;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
         }
     }
 `;

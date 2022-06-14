@@ -12,12 +12,21 @@ export default function NavBar() {
   const [displaySearchBar, setDisplaySetBar] = useState(false);
 
   const {
-    search, setSearch, bottles, setDisplayBarCart,
+    search,
+    setSearch,
+    bottles,
+    setDisplayBarCart,
+    setWinesByPrice,
   } = useContext(AppContext);
 
   const handleClick = (e: any) => {
     e.classList.toggle('active');
     setDisplaySetBar(!displaySearchBar);
+  };
+
+  const hanleChange = (value: string) => {
+    setWinesByPrice([]);
+    setSearch(value);
   };
 
   return (
@@ -29,7 +38,7 @@ export default function NavBar() {
         displaySearchBar && (
         <input
           type="text"
-          onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())}
+          onChange={(e) => hanleChange(e.target.value.toLocaleLowerCase())}
           value={search}
           placeholder="Procure seu vinho"
           className="input"

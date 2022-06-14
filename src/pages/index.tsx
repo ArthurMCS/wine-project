@@ -26,7 +26,7 @@ const Home = () => {
 
       <main>
         <NavBar />
-        <span>{`${winesForRender.length} produtos encontrados`}</span>
+        <div className="winesQuantity">{`${winesForRender.length} produtos encontrados`}</div>
         <FiltersByPrice />
         <WineSectionStyledComponent>
           {winesForRender.map((w: Wine) => <WineCard wine={w} key={w.id} />)}
@@ -35,7 +35,6 @@ const Home = () => {
       {
         displayBarCart && <SidebarCart />
       }
-      <footer />
     </div>
   );
 };

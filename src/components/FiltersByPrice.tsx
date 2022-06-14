@@ -9,10 +9,11 @@ import FilterByPriceStyledComponent from '../styles/FiltersByPrice';
 
 export default function FiltersByPrice() {
   const [filter, setFilter] = useState('');
-  const { wines, setWinesByPrice } = useContext(AppContext);
+  const { wines, setWinesByPrice, setSearch } = useContext(AppContext);
 
   const hanleChange = async (value: string) => {
     setFilter(value);
+    setSearch('');
 
     let winesFiltered = wines;
 

@@ -10,6 +10,9 @@ const WineSectionStyledComponent = styled.section`
     margin-top: -250px;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
+    background: #DEDEDE;
+    min-height: 1000px;
 `;
 
 export default WineSectionStyledComponent;
