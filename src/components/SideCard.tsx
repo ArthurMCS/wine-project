@@ -31,7 +31,7 @@ export default function SideCard(props: Props) {
   };
 
   return (
-    <SideCardStyledComponent>
+    <SideCardStyledComponent data-testid={`cart-item-${id}`}>
       <AiFillCloseCircle
         role="button"
         onClick={() => hanldeClicks()}

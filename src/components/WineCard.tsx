@@ -32,7 +32,7 @@ export default function WineCard(props: Props) {
   };
 
   return (
-    <WineCardStyledComponent>
+    <WineCardStyledComponent data-testid={`wine-card-${wine.id}`}>
       <div>
         <img src={wine.image} alt="imagem do vinho" />
         <p className="WineName">{wine.name}</p>
@@ -52,6 +52,7 @@ export default function WineCard(props: Props) {
       <button
         type="button"
         onClick={handleClick}
+        data-testid={`add-to-cart-btn-${wine.id}`}
       >
         ADICIONAR
       </button>

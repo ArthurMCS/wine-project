@@ -42,6 +42,7 @@ export default function NavBar() {
           value={search}
           placeholder="Procure seu vinho"
           className="input"
+          data-testid="search-input"
         />
         )
       }
@@ -52,6 +53,7 @@ export default function NavBar() {
           className="MainMenu-search-icon"
           type="button"
           onClick={(e) => handleClick(e.target)}
+          data-testid="search-icon"
         />
 
         <div className="UserMenu-toggler">
@@ -64,6 +66,7 @@ export default function NavBar() {
           className="WineboxButton"
           role="button"
           onClick={() => setDisplayBarCart(true)}
+          data-testid="Winebox-btn"
         >
           <div className="WineboxButton-image-wrap">
             <img

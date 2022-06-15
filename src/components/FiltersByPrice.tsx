@@ -89,6 +89,7 @@ export default function FiltersByPrice() {
             onChange={(e) => hanleChange(e.target.value)}
             value="R$200 A R$500"
             checked={filter === 'R$200 A R$500'}
+            data-testid="filter-by-price-200-a-500"
           />
           R$200 A R$500
         </label>
